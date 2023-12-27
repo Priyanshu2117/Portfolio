@@ -1,3 +1,5 @@
+// import { gsap } from "gsap";
+
 function showalert() {
   alert("Hello");
 }
@@ -15,11 +17,11 @@ t1.from(".logoImg", {
   duration: 0.5,
 })
   .from(".hl1", {
-    x: 100,
     opacity: 0,
     duration: 0.4,
   })
   .from(".hamburger-icon", {
+    x: 100,
     opacity: 0,
     duration: 0.5,
   })
@@ -78,18 +80,36 @@ gsap.from(".left-image", {
   duration: 1,
 });
 
-gsap.from(".right-content", {
-  scrollTrigger: {
-    trigger: ".left-image",
-    scroller: "body",
-    start: "top 90%",
-    end: "bottom 50%",
-  },
-  opacity: 0,
-  delay: 1,
-  x: 100,
-  duration: 1,
-});
+if (window.innerWidth > 767) {
+  gsap.from(".right-content", {
+    scrollTrigger: {
+      trigger: ".right-content",
+      scroller: "body",
+      start: "top 90%",
+      end: "bottom 50%",
+    },
+    x: 100,
+    opacity: 0,
+    delay: 1,
+    duration: 1,
+  });
+}
+
+if (window.innerWidth < 767) {
+  const m_rightContent = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".right-content",
+      scroller: "body",
+      start: "top 90%",
+      end: "bottom 50%",
+    },
+  });
+  m_rightContent.from(".right-content", {
+    y: 100,
+    opacity: 0,
+    duration: 1,
+  });
+}
 
 gsap.from("#skills .heading", {
   scrollTrigger: {
@@ -103,46 +123,91 @@ gsap.from("#skills .heading", {
   y: 100,
 });
 
-gsap.from(".sc1", {
-  scrollTrigger: {
-    trigger: ".sc1",
-    scroll: "body",
-    start: "top 60%",
-    end: "bottom 40%",
-  },
-  opacity: 0,
-  x: -100,
-});
-gsap.from(".sc2", {
-  scrollTrigger: {
-    trigger: ".sc2",
-    scroll: "body",
-    start: "top 60%",
-    end: "bottom 40%",
-  },
-  opacity: 0,
-  x: 100,
-});
-gsap.from(".sc3", {
-  scrollTrigger: {
-    trigger: ".sc3",
-    scroll: "body",
-    start: "top 60%",
-    end: "bottom 40%",
-  },
-  opacity: 0,
-  x: -100,
-});
-gsap.from(".sc4", {
-  scrollTrigger: {
-    trigger: ".sc4",
-    scroll: "body",
-    start: "top 60%",
-    end: "bottom 40%",
-  },
-  opacity: 0,
-  x: 100,
-});
+if (window.innerWidth > 767) {
+  gsap.from(".sc1", {
+    scrollTrigger: {
+      trigger: ".sc1",
+      scroll: "body",
+      start: "top 60%",
+      end: "bottom 40%",
+    },
+    opacity: 0,
+    x: -100,
+  });
+  gsap.from(".sc2", {
+    scrollTrigger: {
+      trigger: ".sc2",
+      scroll: "body",
+      start: "top 60%",
+      end: "bottom 40%",
+    },
+    opacity: 0,
+    x: 100,
+  });
+  gsap.from(".sc3", {
+    scrollTrigger: {
+      trigger: ".sc3",
+      scroll: "body",
+      start: "top 60%",
+      end: "bottom 40%",
+    },
+    opacity: 0,
+    x: -100,
+  });
+  gsap.from(".sc4", {
+    scrollTrigger: {
+      trigger: ".sc4",
+      scroll: "body",
+      start: "top 60%",
+      end: "bottom 40%",
+    },
+    opacity: 0,
+    x: 100,
+  });
+}
+
+if (window.innerWidth < 768) {
+  gsap.from(".sc1", {
+    scrollTrigger: {
+      trigger: ".sc1",
+      scroll: "body",
+      start: "top 60%",
+      end: "bottom 40%",
+    },
+    opacity: 0,
+    y: 100,
+  });
+  gsap.from(".sc2", {
+    scrollTrigger: {
+      trigger: ".sc2",
+      scroll: "body",
+      start: "top 60%",
+      end: "bottom 40%",
+    },
+    opacity: 0,
+    y: 100,
+  });
+  gsap.from(".sc3", {
+    scrollTrigger: {
+      trigger: ".sc3",
+      scroll: "body",
+      start: "top 60%",
+      end: "bottom 40%",
+    },
+    opacity: 0,
+    y: 100,
+  });
+  gsap.from(".sc4", {
+    scrollTrigger: {
+      trigger: ".sc4",
+      scroll: "body",
+      start: "top 60%",
+      end: "bottom 40%",
+    },
+    opacity: 0,
+    y: 100,
+  });
+}
 
 gsap.from("#experience .heading", {
   scrollTrigger: {
@@ -155,27 +220,51 @@ gsap.from("#experience .heading", {
   opacity: 0,
   y: 100,
 });
+if (window.innerWidth > 767) {
+  gsap.from(".ec1", {
+    scrollTrigger: {
+      trigger: ".ec1",
+      scroll: "body",
+      start: "top 60%",
+      end: "bottom 40%",
+    },
+    opacity: 0,
+    x: -100,
+  });
+  gsap.from(".ec2", {
+    scrollTrigger: {
+      trigger: ".ec2",
+      scroll: "body",
+      start: "top 60%",
+      end: "bottom 40%",
+    },
+    opacity: 0,
+    x: 100,
+  });
+}
 
-gsap.from(".ec1", {
-  scrollTrigger: {
-    trigger: ".ec1",
-    scroll: "body",
-    start: "top 60%",
-    end: "bottom 40%",
-  },
-  opacity: 0,
-  x: -100,
-});
-gsap.from(".ec2", {
-  scrollTrigger: {
-    trigger: ".ec2",
-    scroll: "body",
-    start: "top 60%",
-    end: "bottom 40%",
-  },
-  opacity: 0,
-  x: 100,
-});
+if (window.innerWidth < 767) {
+  gsap.from(".ec1", {
+    scrollTrigger: {
+      trigger: ".ec1",
+      scroll: "body",
+      start: "top 60%",
+      end: "bottom 40%",
+    },
+    opacity: 0,
+    y: 100,
+  });
+  gsap.from(".ec2", {
+    scrollTrigger: {
+      trigger: ".ec2",
+      scroll: "body",
+      start: "top 60%",
+      end: "bottom 40%",
+    },
+    opacity: 0,
+    y: 100,
+  });
+}
 
 gsap.from("#contact .heading", {
   scrollTrigger: {
@@ -189,39 +278,39 @@ gsap.from("#contact .heading", {
   y: 100,
 });
 
-gsap.from(".ct1", {
-  scrollTrigger: {
-    trigger: ".ct1",
-    scroll: "body",
-    start: "top 70%",
-    end: "bottom 70%",
-    markers:true
-  },
-  opacity: 0,
-  x: -100,
-  duration: 1,
-});
+if (window.innerWidth > 767) {
+  gsap.from(".ct1", {
+    scrollTrigger: {
+      trigger: ".ct1",
+      scroll: "body",
+      start: "top 70%",
+      end: "bottom 70%",
+    },
+    opacity: 0,
+    x: -100,
+    duration: 1,
+  });
 
-gsap.from(".ct2", {
-  scrollTrigger: {
-    trigger: ".ct2",
-    scroll: "body",
-    start: "top 60%",
-    end: "bottom 40%",
-  },
-  opacity: 0,
-  y: -60,
-  duration: 1,
-});
-gsap.from(".ct3", {
-  scrollTrigger: {
-    trigger: ".ct3",
-    scroll: "body",
-    start: "top 70%",
-    end: "bottom 70%",
-  },
-  opacity: 0,
-  x: 100,
-  duration: 1,
-});
-
+  gsap.from(".ct2", {
+    scrollTrigger: {
+      trigger: ".ct2",
+      scroll: "body",
+      start: "top 60%",
+      end: "bottom 40%",
+    },
+    opacity: 0,
+    y: -60,
+    duration: 1,
+  });
+  gsap.from(".ct3", {
+    scrollTrigger: {
+      trigger: ".ct3",
+      scroll: "body",
+      start: "top 70%",
+      end: "bottom 70%",
+    },
+    opacity: 0,
+    x: 100,
+    duration: 1,
+  });
+}
