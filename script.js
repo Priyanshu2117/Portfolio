@@ -193,8 +193,9 @@ gsap.from(".ct1", {
   scrollTrigger: {
     trigger: ".ct1",
     scroll: "body",
-    start: "top 50%",
-    end: "bottom 50%",
+    start: "top 70%",
+    end: "bottom 70%",
+    markers:true
   },
   opacity: 0,
   x: -100,
@@ -216,8 +217,8 @@ gsap.from(".ct3", {
   scrollTrigger: {
     trigger: ".ct3",
     scroll: "body",
-    start: "top 50%",
-    end: "bottom 50%",
+    start: "top 70%",
+    end: "bottom 70%",
   },
   opacity: 0,
   x: 100,
