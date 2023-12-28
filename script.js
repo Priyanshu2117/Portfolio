@@ -299,7 +299,7 @@ if (window.innerWidth > 767) {
       end: "bottom 40%",
     },
     opacity: 0,
-    y: -60,
+    x: -60,
     duration: 1,
   });
   gsap.from(".ct3", {
@@ -312,5 +312,5 @@ if (window.innerWidth > 767) {
     opacity: 0,
     x: 100,
     duration: 1,
-  });
+  }); 
 }

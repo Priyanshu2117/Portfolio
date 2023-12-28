@@ -458,7 +458,7 @@ margin-right: 5px;
 .contact-card{
   display: flex;
   justify-content: center;
-  margin-bottom: 80px;
+  /* margin-bottom: 80px; */
 }
 .contact-title{
   font-size: 18px;
